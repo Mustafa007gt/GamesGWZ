@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DEAD-TRIGGER-2</title>
+<title>اسم اللعبة</title>
 
 <style>
 
@@ -150,6 +150,8 @@ width: 100%;
 height: 100%;
 border: none;
 object-fit: cover;
+position: relative;
+z-index: 2;
 }
 
 .prev,
@@ -161,41 +163,41 @@ top:50%;
 
 transform:translateY(-50%);
 
-width:42px;
-height:42px;
+width:36px;
+height:36px;
 
 border:none;
 
 border-radius:50%;
 
-background:rgba(0,0,0,.45);
+background:rgba(0,0,0,0.6);
 
 color:white;
 
-font-size:24px;
+font-size:20px;
 
 cursor:pointer;
 
-z-index:5;
+z-index: 1; /* جعلناها أسفل الفيديو لكي لا تحجب زر التشغيل */
 
 transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .prev:hover,
 .next:hover {
-background: rgba(139, 92, 246, 0.8);
+background: rgba(139, 92, 246, 0.9);
 transform: translateY(-50%) scale(1.08);
 }
 
 .prev{
 
-right:12px;
+right:8px;
 
 }
 
 .next{
 
-left:12px;
+left:8px;
 
 }
 
@@ -203,7 +205,7 @@ left:12px;
 
 position:absolute;
 
-bottom:15px;
+bottom:10px;
 
 left:50%;
 
@@ -213,7 +215,7 @@ display:flex;
 
 gap:8px;
 
-z-index: 10;
+z-index: 3;
 
 }
 
@@ -457,22 +459,20 @@ box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
 
     <!-- عنصر الفيديو -->
     <div class="slide active">
-     <iframe src="https://www.youtube.com/embed/5sgCoLvRHLU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/5sgCoLvRHLU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <!-- صور السلايدر -->
     <div class="slide">
-        <img src="https://i.ibb.co/LhJSMNWS/Screenshot-com-madfingergames-deadtrigger2-MFUnity-Player-Activity.jpg" style="width:100%; height:100%; object-fit:cover;">
+        <img src="https://i.ibb.co/SXH8C2sw/Screenshot-edit-55704712053541.jpg" style="width:100%; height:100%; object-fit:cover;">
     </div>
 
     <div class="slide">
-        <img src="https://i.ibb.co/TxTt3cPT/Screenshot-com-madfingergames-deadtrigger2-MFUnity-Player-Activity.jpg" style="width:100%; height:100%; object-fit:cover;">
+        <img src="https://i.ibb.co/NnpCMPZk/Screenshot-edit-55678531377822.jpg" style="width:100%; height:100%; object-fit:cover;">
     </div>
 
     <div class="slide">
-        <img src="https://i.ibb.co/BVfMS9JH/Screenshot-com-madfingergames-deadtrigger2-MFUnity-Player-Activity.jpg" style="width:100%; height:100%; object-fit:cover;">
+        <img src="https://i.ibb.co/JjMkVJxM/Screenshot-edit-55696055329430.jpg" style="width:100%; height:100%; object-fit:cover;">
     </div>
 
     <button class="prev">&#10094;</button>
@@ -508,7 +508,7 @@ box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
                 <svg viewBox="0 0 24 24"><path d="M4 6H20V8H4V6M4 11H20V13H4V11M4 16H20V18H4V16Z"/></svg>
                 حجم اللعبة
             </span>
-            <strong>600MB </strong>
+            <strong>600MB</strong>
         </div>
 
         <div class="row">
@@ -516,7 +516,7 @@ box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
                 <svg viewBox="0 0 24 24"><path d="M17,2H7C5.89,2 5,2.89 5,4V20C5,21.11 5.89,22 7,22H17C18.11,22 19,21.11 19,20V4C19,2.89 18.11,2 17,2M17,18H7V6H17V18Z"/></svg>
                 الأجهزة المدعومة
             </span>
-            <strong>Android 10+</strong>
+            <strong>+Android 10</strong>
         </div>
 
         <div class="row">
@@ -524,7 +524,7 @@ box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
                 <svg viewBox="0 0 24 24"><path d="M21,6H3A2,2 0 0,0 1,8V16A2,2 0 0,0 3,18H21A2,2 0 0,0 23,16V8A2,2 0 0,0 21,6M21,16H3V8H21V16M6,10H8V12H10V14H8V16H6V14H4V12H6V10M13.5,14.5C14.33,14.5 15,13.83 15,13C15,12.17 14.33,11.5 13.5,11.5C12.67,11.5 12,12.17 12,13C12,13.83 12.67,14.5 13.5,14.5M16.5,11.5C17.33,11.5 18,10.83 18,10C18,9.17 17.33,8.5 16.5,8.5C15.67,8.5 15,9.17 15,10C15,10.83 15.67,11.5 16.5,11.5Z"/></svg>
                 نوع اللعبة
             </span>
-            <strong> زومبي - أكشن</strong>
+            <strong>زومبي - أكشن</strong>
         </div>
 
         <div class="row">
@@ -532,7 +532,7 @@ box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
                 <svg viewBox="0 0 24 24"><path d="M17.9,17.39C17.64,16.59 16.89,16 16,16H8C7.11,16 6.36,16.59 6.1,17.39C4.22,15.9 3,13.6 3,11C3,6.58 6.58,3 11,3C15.42,3 19,6.58 19,11C19,13.6 17.78,15.9 17.9,17.39M11,1C5.48,1 1,5.48 1,11C1,14.19 2.5,17 4.88,18.88C4.55,19.5 4.33,20.19 4.2,20.91C4.08,21.57 4.63,22.15 5.3,22.15C5.83,22.15 6.28,21.78 6.38,21.25C6.63,19.92 7.37,18.73 8.43,18H15.57C16.63,18.73 17.37,19.92 17.62,21.25C17.72,21.78 18.17,22.15 18.7,22.15C19.37,22.15 19.92,21.57 19.8,20.91C19.67,20.19 19.45,19.5 19.12,18.88C21.5,17 23,14.19 23,11C23,5.48 18.52,1 13,1H11Z"/></svg>
                 الإنترنت
             </span>
-            <strong> مطلوب</strong>
+            <strong>مطلوب</strong>
         </div>
 
     </div>
@@ -540,7 +540,7 @@ box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
     <div class="buttons">
 
         <a class="download"
-           href="https://modsfire.com/fRei66sUBwQg6mZ"
+           href="https://modsfire.com/MMcDcau4rFACt61"
            target="_blank">
             ⬇ تحميل اللعبة
         </a>
@@ -565,81 +565,50 @@ const dots = document.querySelectorAll(".dot");
 
 let current = 0;
 
-// عرض الشرائح (صور أو فيديو)
 function showSlide(index){
-
     slides.forEach((slide)=>{
         slide.classList.remove("active");
     });
-
     dots.forEach((dot)=>{
         dot.classList.remove("active");
     });
-
     slides[index].classList.add("active");
     dots[index].classList.add("active");
-
 }
 
-// التالي
 function nextSlide(){
-
     current++;
-
     if(current >= slides.length){
         current = 0;
     }
-
     showSlide(current);
-
 }
 
-// السابق
 function prevSlide(){
-
     current--;
-
     if(current < 0){
         current = slides.length - 1;
     }
-
     showSlide(current);
-
 }
 
-// الأزرار
 document.querySelector(".next").onclick = nextSlide;
 document.querySelector(".prev").onclick = prevSlide;
 
-// الضغط على النقاط
 dots.forEach((dot,index)=>{
-
     dot.onclick = ()=>{
-
         current = index;
         showSlide(current);
-
     };
-
 });
 
-// تم إزالة الحركة التلقائية (setInterval) بناءً على طلبك
-
-// نسخ الرابط
 function copyLink(){
-
-    navigator.clipboard.writeText("https://modsfire.com/fRei66sUBwQg6mZ");
-
+    navigator.clipboard.writeText("https://modsfire.com/MMcDcau4rFACt61");
     const toast = document.getElementById("toast");
-
     toast.style.display = "block";
-
     setTimeout(()=>{
-
         toast.style.display = "none";
-
     },2000);
-
 }
 
 </script>
