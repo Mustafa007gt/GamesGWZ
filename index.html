@@ -25,6 +25,43 @@ min-height:100vh;
 padding:20px;
 }
 
+  .buttons{
+display:flex;
+gap:10px;
+}
+
+.buttons a,
+.buttons button{
+flex:1;
+padding:16px;
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
+text-align:center;
+transition:.3s;
+}
+
+.download{
+background:#8B5CF6;
+color:white;
+}
+
+.download:hover{
+background:#7C3AED;
+}
+
+.copy{
+background:#374151;
+color:white;
+}
+
+.copy:hover{
+background:#4B5563;
+}
+  
 .card{
 width:100%;
 max-width:430px;
@@ -128,13 +165,18 @@ background:#7C3AED;
 
 </div>
 
+<div class="buttons">
+
 <a class="download"
 href="https://modsfire.com/MMcDcau4rFACt61"
 target="_blank">
-
 ⬇ تحميل اللعبة
-
 </a>
+
+<button class="copy"
+onclick="copyLink()">
+📋 نسخ الرابط
+</button>
 
 </div>
 
