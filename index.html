@@ -18,15 +18,15 @@ font-family:Arial,sans-serif;
 }
 
 body{
-/* خلفية جديدة مميزة واحترافية بتدرجات عميقة ومبتكرة */
 background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #0f172a 60%, #020617 100%);
 min-height:100vh;
 
 display:flex;
+flex-direction: column;
 justify-content:center;
-align-items:flex-start;
+align-items:center;
 
-padding:25px;
+padding:20px;
 
 overflow-x:hidden;
 position: relative;
@@ -57,6 +57,29 @@ background:radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);
 border-radius:50%;
 pointer-events: none;
 z-index: 1;
+}
+
+/* تنسيق الشريط الإعلاني المتحرك */
+.announcement-bar {
+width: 100%;
+max-width: 430px;
+background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+color: white;
+padding: 10px 15px;
+border-radius: 12px;
+margin-bottom: 15px;
+font-size: 14px;
+font-weight: bold;
+box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+position: relative;
+z-index: 2;
+overflow: hidden;
+display: flex;
+align-items: center;
+}
+
+.announcement-bar marquee {
+width: 100%;
 }
 
 .card{
@@ -359,6 +382,13 @@ z-index:999;
 </head>
 
 <body>
+
+<!-- الشريط الإعلاني المتحرك -->
+<div class="announcement-bar">
+    <marquee behavior="scroll" direction="right" scrollamount="5">
+        🔥 أهلاً بك في قناة مصطفى جيمز | نسخة محدثة، آمنة، وخالية من المشاكل برابط مباشر وسريع! 🚀
+    </marquee>
+</div>
 
 <div class="card">
 
