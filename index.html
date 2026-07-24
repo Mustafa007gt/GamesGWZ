@@ -25,43 +25,61 @@ min-height:100vh;
 padding:20px;
 }
 
-  .buttons{
+.buttons{
 display:flex;
-gap:10px;
+flex-direction:column;
+gap:12px;
 }
 
-.buttons a,
-.buttons button{
-flex:1;
-padding:16px;
+.download,
+.copy{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+height:55px;
+
 border:none;
-border-radius:12px;
+border-radius:14px;
+
 font-size:18px;
 font-weight:bold;
-cursor:pointer;
+
 text-decoration:none;
-text-align:center;
-transition:.3s;
+
+cursor:pointer;
+
+transition:.25s;
+
 }
 
 .download{
-background:#8B5CF6;
+
+background:linear-gradient(135deg,#8B5CF6,#6D28D9);
 color:white;
+
 }
 
 .download:hover{
-background:#7C3AED;
+
+transform:translateY(-2px);
+
 }
 
 .copy{
-background:#374151;
+
+background:#334155;
 color:white;
+
 }
 
 .copy:hover{
-background:#4B5563;
+
+background:#475569;
+transform:translateY(-2px);
+
 }
-  
 .card{
 width:100%;
 max-width:430px;
@@ -145,22 +163,22 @@ background:#7C3AED;
 
 <div class="row">
 <span>📦 حجم اللعبة</span>
-<span>2 GB</span>
+<strong>2 GB</strong>
 </div>
 
 <div class="row">
 <span>📱 الأجهزة المدعومة</span>
-<span>Android 10+</span>
+<strong>Android 10+</strong>
 </div>
 
 <div class="row">
 <span>🎮 نوع اللعبة</span>
-<span>عالم مفتوح - أكشن</span>
+<strong>عالم مفتوح - أكشن</strong>
 </div>
 
 <div class="row">
 <span>🌐 الإنترنت</span>
-<span>غير مطلوب</span>
+<strong>غير مطلوب</strong>
 </div>
 
 </div>
@@ -173,10 +191,11 @@ target="_blank">
 ⬇ تحميل اللعبة
 </a>
 
-<button class="copy"
-onclick="copyLink()">
+<button class="copy" onclick="copyLink()">
 📋 نسخ الرابط
 </button>
+
+</div>
 
 </div>
 
@@ -185,11 +204,29 @@ onclick="copyLink()">
 
 function copyLink(){
 
-const link="https://modsfire.com/MMcDcau4rFACt61";
+navigator.clipboard.writeText("https://modsfire.com/MMcDcau4rFACt61");
 
-navigator.clipboard.writeText(link);
+const toast=document.createElement("div");
 
-alert("✅ تم نسخ الرابط");
+toast.innerHTML="✅ تم نسخ الرابط";
+
+toast.style.position="fixed";
+toast.style.bottom="25px";
+toast.style.left="50%";
+toast.style.transform="translateX(-50%)";
+toast.style.background="#22c55e";
+toast.style.color="#fff";
+toast.style.padding="14px 22px";
+toast.style.borderRadius="12px";
+toast.style.fontWeight="bold";
+toast.style.boxShadow="0 10px 25px rgba(0,0,0,.3)";
+toast.style.zIndex="9999";
+
+document.body.appendChild(toast);
+
+setTimeout(()=>{
+toast.remove();
+},2000);
 
 }
 
