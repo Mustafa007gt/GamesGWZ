@@ -18,8 +18,8 @@ font-family:Arial,sans-serif;
 }
 
 body{
-
-background:linear-gradient(135deg,#0b1220,#172554,#1e1b4b);
+/* خلفية جديدة مميزة واحترافية بتدرجات عميقة ومبتكرة */
+background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #0f172a 60%, #020617 100%);
 min-height:100vh;
 
 display:flex;
@@ -29,47 +29,34 @@ align-items:flex-start;
 padding:25px;
 
 overflow-x:hidden;
-
+position: relative;
 }
 
+/* توهجات خلفية جمالية متطورة */
 body::before{
-
 content:"";
-
 position:fixed;
-
-top:-180px;
-right:-180px;
-
-width:420px;
-height:420px;
-
-background:#8b5cf620;
-
+top:-150px;
+left: 10%;
+width:450px;
+height:450px;
+background:radial-gradient(circle, rgba(139,92,246,0.18) 0%, rgba(0,0,0,0) 70%);
 border-radius:50%;
-
-filter:blur(100px);
-
+pointer-events: none;
+z-index: 1;
 }
 
 body::after{
-
 content:"";
-
 position:fixed;
-
-bottom:-180px;
-left:-180px;
-
-width:380px;
-height:380px;
-
-background:#3b82f620;
-
+bottom:-150px;
+right: 10%;
+width:450px;
+height:450px;
+background:radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);
 border-radius:50%;
-
-filter:blur(100px);
-
+pointer-events: none;
+z-index: 1;
 }
 
 .card{
@@ -77,13 +64,16 @@ filter:blur(100px);
 width:100%;
 max-width:430px;
 
-background:#1f2937;
+background:rgba(31, 41, 55, 0.85);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
 
+border: 1px solid rgba(255, 255, 255, 0.08);
 border-radius:22px;
 
 overflow:hidden;
 
-box-shadow:0 20px 45px rgba(0,0,0,.45);
+box-shadow:0 25px 50px rgba(0,0,0,0.6);
 
 position:relative;
 z-index:2;
@@ -231,6 +221,7 @@ margin-bottom:20px;
 display:flex;
 
 justify-content:space-between;
+align-items:center;
 
 padding:16px;
 
@@ -253,6 +244,22 @@ border:none;
 font-weight:bold;
 
 color:#cbd5e1;
+
+display: flex;
+
+align-items:center;
+
+gap: 10px;
+
+}
+
+.label svg {
+
+width: 20px;
+
+height: 20px;
+
+fill: #8b5cf6;
 
 }
 
@@ -355,7 +362,7 @@ z-index:999;
 
 <div class="card">
 
-<!-- هنا راح نحط السلايدر بالجزء الثاني -->
+<!-- السلايدر -->
 <div class="slider">
 
     <img class="slide active" src="https://i.ibb.co/SXH8C2sw/Screenshot-edit-55704712053541.jpg">
@@ -375,7 +382,8 @@ z-index:999;
     </div>
 
 </div>
-<!-- وهنا المعلومات بالجزء الثالث -->
+
+<!-- معلومات اللعبة -->
 <div class="content">
 
     <h1>GTA SAN ANDREAS</h1>
@@ -383,22 +391,34 @@ z-index:999;
     <div class="info">
 
         <div class="row">
-            <span class="label">📦 حجم اللعبة</span>
+            <span class="label">
+                <svg viewBox="0 0 24 24"><path d="M4 6H20V8H4V6M4 11H20V13H4V11M4 16H20V18H4V16Z"/></svg>
+                حجم اللعبة
+            </span>
             <strong>2 GB</strong>
         </div>
 
         <div class="row">
-            <span class="label">📱 الأجهزة المدعومة</span>
+            <span class="label">
+                <svg viewBox="0 0 24 24"><path d="M17,2H7C5.89,2 5,2.89 5,4V20C5,21.11 5.89,22 7,22H17C18.11,22 19,21.11 19,20V4C19,2.89 18.11,2 17,2M17,18H7V6H17V18Z"/></svg>
+                الأجهزة المدعومة
+            </span>
             <strong>Android 10+</strong>
         </div>
 
         <div class="row">
-            <span class="label">🎮 نوع اللعبة</span>
+            <span class="label">
+                <svg viewBox="0 0 24 24"><path d="M21,6H3A2,2 0 0,0 1,8V16A2,2 0 0,0 3,18H21A2,2 0 0,0 23,16V8A2,2 0 0,0 21,6M21,16H3V8H21V16M6,10H8V12H10V14H8V16H6V14H4V12H6V10M13.5,14.5C14.33,14.5 15,13.83 15,13C15,12.17 14.33,11.5 13.5,11.5C12.67,11.5 12,12.17 12,13C12,13.83 12.67,14.5 13.5,14.5M16.5,11.5C17.33,11.5 18,10.83 18,10C18,9.17 17.33,8.5 16.5,8.5C15.67,8.5 15,9.17 15,10C15,10.83 15.67,11.5 16.5,11.5Z"/></svg>
+                نوع اللعبة
+            </span>
             <strong>عالم مفتوح - أكشن</strong>
         </div>
 
         <div class="row">
-            <span class="label">🌐 الإنترنت</span>
+            <span class="label">
+                <svg viewBox="0 0 24 24"><path d="M17.9,17.39C17.64,16.59 16.89,16 16,16H8C7.11,16 6.36,16.59 6.1,17.39C4.22,15.9 3,13.6 3,11C3,6.58 6.58,3 11,3C15.42,3 19,6.58 19,11C19,13.6 17.78,15.9 17.9,17.39M11,1C5.48,1 1,5.48 1,11C1,14.19 2.5,17 4.88,18.88C4.55,19.5 4.33,20.19 4.2,20.91C4.08,21.57 4.63,22.15 5.3,22.15C5.83,22.15 6.28,21.78 6.38,21.25C6.63,19.92 7.37,18.73 8.43,18H15.57C16.63,18.73 17.37,19.92 17.62,21.25C17.72,21.78 18.17,22.15 18.7,22.15C19.37,22.15 19.92,21.57 19.8,20.91C19.67,20.19 19.45,19.5 19.12,18.88C21.5,17 23,14.19 23,11C23,5.48 18.52,1 13,1H11Z"/></svg>
+                الإنترنت
+            </span>
             <strong>غير مطلوب</strong>
         </div>
 
@@ -424,77 +444,94 @@ z-index:999;
 <div class="toast" id="toast">
 ✅ تم نسخ الرابط
 </div>
-    <script>
+
+<script>
 
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 
 let current = 0;
 
+// عرض صورة
 function showSlide(index){
 
-slides.forEach(slide=>slide.classList.remove("active"));
-dots.forEach(dot=>dot.classList.remove("active"));
+    slides.forEach((slide)=>{
+        slide.classList.remove("active");
+    });
 
-slides[index].classList.add("active");
-dots[index].classList.add("active");
+    dots.forEach((dot)=>{
+        dot.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
 
 }
 
+// التالي
 function nextSlide(){
 
-current++;
+    current++;
 
-if(current>=slides.length) current=0;
+    if(current >= slides.length){
+        current = 0;
+    }
 
-showSlide(current);
+    showSlide(current);
 
 }
 
+// السابق
 function prevSlide(){
 
-current--;
+    current--;
 
-if(current<0) current=slides.length-1;
+    if(current < 0){
+        current = slides.length - 1;
+    }
 
-showSlide(current);
+    showSlide(current);
 
 }
 
-document.querySelector(".next").onclick=nextSlide;
-document.querySelector(".prev").onclick=prevSlide;
+// الأزرار
+document.querySelector(".next").onclick = nextSlide;
+document.querySelector(".prev").onclick = prevSlide;
 
+// الضغط على النقاط
 dots.forEach((dot,index)=>{
 
-dot.onclick=()=>{
+    dot.onclick = ()=>{
 
-current=index;
+        current = index;
+        showSlide(current);
 
-showSlide(current);
-
-}
+    };
 
 });
 
+// تشغيل تلقائي
 setInterval(nextSlide,3000);
 
+// نسخ الرابط
 function copyLink(){
 
-navigator.clipboard.writeText("https://modsfire.com/MMcDcau4rFACt61");
+    navigator.clipboard.writeText("https://modsfire.com/MMcDcau4rFACt61");
 
-const toast=document.getElementById("toast");
+    const toast = document.getElementById("toast");
 
-toast.style.display="block";
+    toast.style.display = "block";
 
-setTimeout(()=>{
+    setTimeout(()=>{
 
-toast.style.display="none";
+        toast.style.display = "none";
 
-},2000);
+    },2000);
 
 }
 
 </script>
 
 </body>
+
 </html>
